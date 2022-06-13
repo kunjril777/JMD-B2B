@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "changelogDate": "20220613081252",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "items_back_in_stock",
+  "fields": [
+    {
+      "fieldName": "userId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "productId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "stockStatus",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "statusUpdateTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ItemsBackInStock",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

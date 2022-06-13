@@ -1,0 +1,52 @@
+{
+  "applications": "*",
+  "changelogDate": "20220613081241",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "jhi_order",
+  "fields": [
+    {
+      "fieldName": "cartTransactionId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "orderStatus",
+      "fieldType": "ORDERSTATUS",
+      "fieldValues": "ORDERED,SHIPPED,IN_TRANSIT,OUT_FOR_DELIVERY,DELIVERED"
+    },
+    {
+      "fieldName": "orderDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Order",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "orderTrackingLog",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "order",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

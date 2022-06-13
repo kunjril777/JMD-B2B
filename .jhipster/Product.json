@@ -1,0 +1,80 @@
+{
+  "applications": "*",
+  "changelogDate": "20220613081237",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "product",
+  "fields": [
+    {
+      "fieldName": "brandName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "productName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "modelNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "productStatus",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "minOrderQuantity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "maxOrderQuantity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tags",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Product",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "productReview",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "product",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "productVariant",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "product",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "category",
+      "otherEntityRelationshipName": "category",
+      "relationshipName": "category",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

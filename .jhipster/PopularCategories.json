@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "changelogDate": "20220613081250",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "popular_categories",
+  "fields": [
+    {
+      "fieldName": "categoryId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "viewCount",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "soldQuantity",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "soldDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PopularCategories",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

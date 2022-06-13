@@ -1,0 +1,51 @@
+{
+  "applications": "*",
+  "changelogDate": "20220613081240",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "product_inventory",
+  "fields": [
+    {
+      "fieldName": "location",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "stockQuantity",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "stockStatus",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ProductInventory",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "productVariant",
+      "otherEntityRelationshipName": "productVariant",
+      "relationshipName": "productVariant",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

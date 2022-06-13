@@ -1,0 +1,59 @@
+{
+  "applications": "*",
+  "changelogDate": "20220613081245",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "ledger_transaction",
+  "fields": [
+    {
+      "fieldName": "amount",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "transactionType",
+      "fieldType": "TRANSACTIONTYPE",
+      "fieldValues": "CREDIT,DEBIT"
+    },
+    {
+      "fieldName": "ledgerTransactionStatus",
+      "fieldType": "LTSTATUS",
+      "fieldValues": "SUCCESSFUL,PENDING,FAILURE"
+    },
+    {
+      "fieldName": "clientName",
+      "fieldType": "CLIENTNAME",
+      "fieldValues": "ORDERDEBIT,LEDGER_CREDIT_PG,LEDGER_CREDIT_FINANCE"
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "LedgerTransaction",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "ledgerLog",
+      "otherEntityRelationshipName": "ledgerTransaction",
+      "ownerSide": true,
+      "relationshipName": "ledgerTransaction",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "no"
+}

@@ -1,0 +1,49 @@
+{
+  "applications": "*",
+  "changelogDate": "20220613081236",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "ledger_log",
+  "fields": [
+    {
+      "fieldName": "amount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "totalBalance",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "transactionDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "transactionType",
+      "fieldType": "TRANSACTIONTYPE",
+      "fieldValues": "CREDIT,DEBIT"
+    },
+    {
+      "fieldName": "clientTransactionId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "clientName",
+      "fieldType": "CLIENTNAME",
+      "fieldValues": "ORDERDEBIT,LEDGER_CREDIT_PG,LEDGER_CREDIT_FINANCE"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "LedgerLog",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "ledger",
+      "otherEntityRelationshipName": "ledger",
+      "relationshipName": "ledger",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

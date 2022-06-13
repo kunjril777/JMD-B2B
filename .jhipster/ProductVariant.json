@@ -1,0 +1,78 @@
+{
+  "applications": "*",
+  "changelogDate": "20220613081238",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "product_variant",
+  "fields": [
+    {
+      "fieldName": "productVariantId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "productPrice",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dealPrice",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "mrp",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "attributes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "images",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ProductVariant",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "productInventory",
+      "otherEntityRelationshipName": "productVariant",
+      "relationshipName": "productVariant",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "product",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

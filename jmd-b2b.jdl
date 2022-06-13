@@ -1,0 +1,314 @@
+
+entity UserB2B {
+	agentId String required
+    email String required
+    password String required
+    createdTime ZonedDateTime required
+    updatedTime ZonedDateTime required
+    createdBy String required
+    updatedBy String required
+}
+entity Address {
+	title String required
+	addressLine1 String required
+    addressLine2 String
+	pincode Long required
+	city String required
+	state String required
+    gst String
+    landmark String required
+    addressStatus Boolean
+    createdTime ZonedDateTime required
+    updatedTime ZonedDateTime required
+    createdBy String required
+    updatedBy String required
+}
+entity CartProduct{
+    quantity Long
+    productVariantId Long
+    price Long
+    createdTime ZonedDateTime
+    updatedTime ZonedDateTime
+    createdBy String
+    updatedBy String
+}
+entity Ledger {
+    jioCredits Double
+}
+entity LedgerLog {
+    amount Double
+    totalBalance Double
+    transactionDate ZonedDateTime
+    transactionType TRANSACTIONTYPE
+    clientTransactionId Long
+    clientName CLIENTNAME
+}
+entity Product {
+	brandName String
+	productName String required
+    modelNumber String
+    productStatus Boolean
+    minOrderQuantity Integer
+    maxOrderQuantity Integer
+    tags String
+    createdTime ZonedDateTime
+    updatedTime ZonedDateTime
+    createdBy String
+    updatedBy String
+}
+entity ProductVariant {
+	productVariantId Long
+    productPrice Float required
+    dealPrice Float
+    mrp Float
+    description String
+    title String
+    attributes String
+    images String
+    createdTime ZonedDateTime
+    updatedTime ZonedDateTime
+    createdBy String
+    updatedBy String
+}
+entity ProductReview{
+    userId Long
+	reviewer String
+    rating Long
+    comment String
+    createdTime ZonedDateTime
+    updatedTime ZonedDateTime
+    createdBy String
+    updatedBy String
+}
+entity ProductInventory{
+	location Long
+    stockQuantity Long
+    stockStatus Boolean
+    createdTime ZonedDateTime
+    updatedTime ZonedDateTime
+    createdBy String
+    updatedBy String
+}
+entity Order {
+    cartTransactionId Long
+    orderStatus ORDERSTATUS
+    orderDate ZonedDateTime
+    createdTime ZonedDateTime
+    updatedTime ZonedDateTime
+    createdBy String
+    updatedBy String
+}
+entity OrderTrackingLog{
+	description String
+    orderTrackingStatus ORDERSTATUS
+    createdTime ZonedDateTime
+    updatedTime ZonedDateTime
+    createdBy String
+    updatedBy String
+}
+entity Payment {
+    pgTransactionId String
+    clientTransactionType CLIENTTRANSACTIONTYPE
+    clientTransactionId Long
+    pgStatus String
+    transactioninitDate ZonedDateTime
+    statusUpdateDate ZonedDateTime
+    amount Float
+    redirectionUrl String
+    paymentAggregator PAYMENTAGGREGATOR
+    paymentgateway PAYMENTGATEWAY
+    paymentStatus PAYMENTSTATUS
+    paymentMethod PAYMENTMETHOD
+    createdTime ZonedDateTime
+    updatedTime ZonedDateTime
+    createdBy String
+    updatedBy String
+}
+entity CartTransaction {
+     cartTotalQuantity Long
+    cartTotalPrice Long
+    billingAddressId Long
+    shippingAddressId Long
+    deliveryCharge Double
+    couponCode String
+    cartFinalTotal Long
+    createdTime ZonedDateTime
+    updatedTime ZonedDateTime
+    createdBy String
+    updatedBy String
+}
+entity LedgerTransaction {
+    amount Long
+    transactionType TRANSACTIONTYPE
+    ledgerTransactionStatus LTSTATUS
+    clientName CLIENTNAME
+    createdTime ZonedDateTime
+    updatedTime ZonedDateTime
+    createdBy String
+    updatedBy String
+}
+entity Category {
+	title String
+    parentcategory Long
+    attributes String
+    level String
+    description String
+    categoryStatus Boolean
+}
+entity WishList {
+    wishListName String
+    createdTime ZonedDateTime
+    updatedTime ZonedDateTime
+    createdBy String
+    updatedBy String
+}
+entity WishListProduct {
+    quantity Long
+    productId Long
+    price Long
+    createdTime ZonedDateTime
+    updatedTime ZonedDateTime
+    createdBy String
+    updatedBy String
+}
+entity TrendingProducts {
+   productId Long
+   categoryId Long
+   soldQuantity Long
+   viewCount Long
+   soldDate ZonedDateTime
+   createdTime ZonedDateTime
+   updatedTime ZonedDateTime
+   createdBy String
+   updatedBy String
+}
+
+entity PopularCategories {
+  categoryId Long
+  viewCount Long
+  soldQuantity Long
+  soldDate ZonedDateTime
+  createdTime ZonedDateTime
+  updatedTime ZonedDateTime
+  createdBy String
+  updatedBy String
+}
+
+entity DealsOfTheDay {
+  productId Long
+  categoryId Long
+  dealStartTime ZonedDateTime
+  dealEndTime ZonedDateTime
+  priority Integer
+  createdTime ZonedDateTime
+  updatedTime ZonedDateTime
+  createdBy String
+  updatedBy String
+}
+entity ItemsBackInStock {
+  userId Long
+  productId Long
+  stockStatus Boolean
+  statusUpdateTime ZonedDateTime
+  createdTime ZonedDateTime
+  updatedTime ZonedDateTime
+  createdBy String
+  updatedBy String
+}
+entity Topselections {
+  productId Long
+  categoryId Long
+  priority Integer
+  createdTime ZonedDateTime
+  updatedTime ZonedDateTime
+  createdBy String
+  updatedBy String
+}
+entity RecommmendedItems {
+   userId Long
+   productId Long
+   categoryId Long
+   priority Long
+   createdTime ZonedDateTime
+   updatedTime ZonedDateTime
+   createdBy String
+   updatedBy String
+}
+entity RecentSearches {
+  userId Long
+  searchText String
+  searchCount Long
+  createdTime ZonedDateTime
+  updatedTime ZonedDateTime
+  createdBy String
+  updatedBy String
+}
+entity PincodeDeliveryMapping {
+   originLocation Long
+   deliveryPincode Long
+   weight WEIGHT
+   deliverable Boolean
+   numOfDaysToDelivery ZonedDateTime
+   createdTime ZonedDateTime
+    updatedTime ZonedDateTime
+    createdBy String
+    updatedBy String
+}
+relationship OneToOne {
+	Payment{payment} to Order
+	LedgerTransaction{ledgerTransaction} to LedgerLog
+	Category{category} to Category
+	UserB2B{userB2B} to Ledger
+}
+relationship OneToMany{
+	Product{product} to ProductReview
+	Product{product} to ProductVariant
+	Category{category} to Product
+	ProductVariant{productVariant} to ProductInventory
+	Order{order} to OrderTrackingLog
+	UserB2B{userB2B} to CartTransaction
+	UserB2B{userB2B} to Address
+    UserB2B{userB2B} to WishList
+	CartTransaction{cartTransaction} to CartProduct
+	WishList{wishlist} to WishListProduct
+	Ledger{ledger} to LedgerLog
+}
+
+enum PAYMENTSTATUS {
+	SUCCESSFUL, PENDING, FAILURE
+}
+enum LTSTATUS {
+	SUCCESSFUL, PENDING, FAILURE
+}
+enum CLIENTTRANSACTIONTYPE {
+	ORDER_PAYMNET, LEDGER_CREDIT
+}
+enum PAYMENTMETHOD {
+	CREDITCARD, DEBITCARD, NET_BANKING, UPI, EMI, JIOCREDITS
+}
+enum STATUS {
+     ACTIVE, INACTVE
+}
+enum PAYMENTGATEWAY {
+	 RAZORPAY, JUSPAY, JIOCREDITS
+}
+enum PAYMENTAGGREGATOR {
+   JIOPG , JIOCREDITS
+}
+enum Language {
+    HINDI, ENGLISH, KANNADA, MARATHI
+}
+enum TRANSACTIONTYPE {
+    CREDIT, DEBIT
+}
+enum CLIENTNAME {
+    ORDERDEBIT, LEDGER_CREDIT_PG, LEDGER_CREDIT_FINANCE
+}
+enum ORDERSTATUS {
+	ORDERED, SHIPPED, IN_TRANSIT, OUT_FOR_DELIVERY, DELIVERED
+}
+enum WEIGHT {
+HEAVY, MEDIUM, LIGHT
+}
+
+

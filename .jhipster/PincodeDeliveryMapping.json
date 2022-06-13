@@ -1,0 +1,53 @@
+{
+  "applications": "*",
+  "changelogDate": "20220613081256",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "pincode_delivery_mapping",
+  "fields": [
+    {
+      "fieldName": "originLocation",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "deliveryPincode",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "weight",
+      "fieldType": "WEIGHT",
+      "fieldValues": "HEAVY,MEDIUM,LIGHT"
+    },
+    {
+      "fieldName": "deliverable",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "numOfDaysToDelivery",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PincodeDeliveryMapping",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

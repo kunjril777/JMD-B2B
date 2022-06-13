@@ -1,0 +1,93 @@
+{
+  "applications": "*",
+  "changelogDate": "20220613081243",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "payment",
+  "fields": [
+    {
+      "fieldName": "pgTransactionId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "clientTransactionType",
+      "fieldType": "CLIENTTRANSACTIONTYPE",
+      "fieldValues": "ORDER_PAYMNET,LEDGER_CREDIT"
+    },
+    {
+      "fieldName": "clientTransactionId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pgStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "transactioninitDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "statusUpdateDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "redirectionUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "paymentAggregator",
+      "fieldType": "PAYMENTAGGREGATOR",
+      "fieldValues": "JIOPG,JIOCREDITS"
+    },
+    {
+      "fieldName": "paymentgateway",
+      "fieldType": "PAYMENTGATEWAY",
+      "fieldValues": "RAZORPAY,JUSPAY,JIOCREDITS"
+    },
+    {
+      "fieldName": "paymentStatus",
+      "fieldType": "PAYMENTSTATUS",
+      "fieldValues": "SUCCESSFUL,PENDING,FAILURE"
+    },
+    {
+      "fieldName": "paymentMethod",
+      "fieldType": "PAYMENTMETHOD",
+      "fieldValues": "CREDITCARD,DEBITCARD,NET_BANKING,UPI,EMI,JIOCREDITS"
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Payment",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "order",
+      "otherEntityRelationshipName": "payment",
+      "ownerSide": true,
+      "relationshipName": "payment",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "no"
+}

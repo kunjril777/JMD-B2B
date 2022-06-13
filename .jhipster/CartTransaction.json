@@ -1,0 +1,73 @@
+{
+  "applications": "*",
+  "changelogDate": "20220613081244",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "cart_transaction",
+  "fields": [
+    {
+      "fieldName": "cartTotalQuantity",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "cartTotalPrice",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "billingAddressId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "shippingAddressId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "deliveryCharge",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "couponCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cartFinalTotal",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "CartTransaction",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "cartProduct",
+      "otherEntityRelationshipName": "cartTransaction",
+      "relationshipName": "cartTransaction",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userB2B",
+      "otherEntityRelationshipName": "userB2B",
+      "relationshipName": "userB2B",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

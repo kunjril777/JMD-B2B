@@ -1,0 +1,44 @@
+{
+  "applications": "*",
+  "changelogDate": "20220613081255",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "recent_searches",
+  "fields": [
+    {
+      "fieldName": "userId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "searchText",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "searchCount",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "RecentSearches",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

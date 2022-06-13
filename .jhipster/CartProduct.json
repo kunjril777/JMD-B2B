@@ -1,0 +1,51 @@
+{
+  "applications": "*",
+  "changelogDate": "20220613081234",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "cart_product",
+  "fields": [
+    {
+      "fieldName": "quantity",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "productVariantId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "CartProduct",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "cartTransaction",
+      "otherEntityRelationshipName": "cartTransaction",
+      "relationshipName": "cartTransaction",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

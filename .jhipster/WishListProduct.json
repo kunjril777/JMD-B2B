@@ -1,0 +1,51 @@
+{
+  "applications": "*",
+  "changelogDate": "20220613081248",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "wish_list_product",
+  "fields": [
+    {
+      "fieldName": "quantity",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "productId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "WishListProduct",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "wishList",
+      "otherEntityRelationshipName": "wishlist",
+      "relationshipName": "wishList",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

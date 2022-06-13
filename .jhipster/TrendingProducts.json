@@ -1,0 +1,52 @@
+{
+  "applications": "*",
+  "changelogDate": "20220613081249",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "trending_products",
+  "fields": [
+    {
+      "fieldName": "productId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "categoryId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "soldQuantity",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "viewCount",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "soldDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "TrendingProducts",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

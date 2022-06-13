@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "changelogDate": "20220613081242",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "order_tracking_log",
+  "fields": [
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orderTrackingStatus",
+      "fieldType": "ORDERSTATUS",
+      "fieldValues": "ORDERED,SHIPPED,IN_TRANSIT,OUT_FOR_DELIVERY,DELIVERED"
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "updatedTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "OrderTrackingLog",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "order",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "order",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}
