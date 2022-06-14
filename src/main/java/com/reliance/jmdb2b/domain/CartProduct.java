@@ -41,7 +41,7 @@ public class CartProduct implements Serializable {
     private String updatedBy;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "cartTransactions", "userB2B" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "cartTransactioncartProducts", "userB2B" }, allowSetters = true)
     private CartTransaction cartTransaction;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

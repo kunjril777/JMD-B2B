@@ -39,7 +39,7 @@
   "relationships": [
     {
       "otherEntityName": "order",
-      "otherEntityRelationshipName": "order",
+      "otherEntityRelationshipName": "orderNorderTrackingLog",
       "relationshipName": "order",
       "relationshipType": "many-to-one"
     }

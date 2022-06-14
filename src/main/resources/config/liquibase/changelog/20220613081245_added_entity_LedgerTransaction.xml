@@ -38,8 +38,8 @@
             <column name="updated_by" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="ledger_transaction_id" type="bigint">
-                <constraints nullable="true" unique="true" uniqueConstraintName="ux_ledger_transaction__ledger_transaction_id" />
+            <column name="ledger_transaction_ledger_log_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_ledger_transaction__ledger_transaction_ledger_log_id" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>

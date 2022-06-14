@@ -76,7 +76,7 @@
   "relationships": [
     {
       "otherEntityName": "userB2B",
-      "otherEntityRelationshipName": "userB2B",
+      "otherEntityRelationshipName": "userB2Baddress",
       "relationshipName": "userB2B",
       "relationshipType": "many-to-one"
     }

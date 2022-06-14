@@ -64,12 +64,12 @@
     {
       "otherEntityName": "productInventory",
       "otherEntityRelationshipName": "productVariant",
-      "relationshipName": "productVariant",
+      "relationshipName": "productVariantNproductInventory",
       "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "product",
-      "otherEntityRelationshipName": "product",
+      "otherEntityRelationshipName": "productNproductVariant",
       "relationshipName": "product",
       "relationshipType": "many-to-one"
     }

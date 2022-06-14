@@ -8,9 +8,9 @@
     -->
     <changeSet id="20220613081232-2" author="jhipster">
 
-        <addForeignKeyConstraint baseColumnNames="userb2b_id"
+        <addForeignKeyConstraint baseColumnNames="userb2bledger_id"
                                  baseTableName="user_b_2_b"
-                                 constraintName="fk_user_b_2_b__userb2b_id"
+                                 constraintName="fk_user_b_2_b__userb2bledger_id"
                                  referencedColumnNames="id"
                                  referencedTableName="ledger"/>
     </changeSet>

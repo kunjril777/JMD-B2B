@@ -42,7 +42,7 @@ public class LedgerLog implements Serializable {
     private CLIENTNAME clientName;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "ledgers" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "ledgerNledgerLogs" }, allowSetters = true)
     private Ledger ledger;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

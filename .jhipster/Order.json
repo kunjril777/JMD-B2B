@@ -44,7 +44,7 @@
     {
       "otherEntityName": "orderTrackingLog",
       "otherEntityRelationshipName": "order",
-      "relationshipName": "order",
+      "relationshipName": "orderNorderTrackingLog",
       "relationshipType": "one-to-many"
     }
   ],

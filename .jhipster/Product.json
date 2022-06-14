@@ -60,18 +60,18 @@
     {
       "otherEntityName": "productReview",
       "otherEntityRelationshipName": "product",
-      "relationshipName": "product",
+      "relationshipName": "productNproductReview",
       "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "productVariant",
       "otherEntityRelationshipName": "product",
-      "relationshipName": "product",
+      "relationshipName": "productNproductVariant",
       "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "category",
-      "otherEntityRelationshipName": "category",
+      "otherEntityRelationshipName": "categoryNproduct",
       "relationshipName": "category",
       "relationshipType": "many-to-one"
     }

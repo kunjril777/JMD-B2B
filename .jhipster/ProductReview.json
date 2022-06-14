@@ -46,7 +46,7 @@
   "relationships": [
     {
       "otherEntityName": "product",
-      "otherEntityRelationshipName": "product",
+      "otherEntityRelationshipName": "productNproductReview",
       "relationshipName": "product",
       "relationshipType": "many-to-one"
     }

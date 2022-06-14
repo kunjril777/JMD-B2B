@@ -51,7 +51,7 @@
       "otherEntityName": "ledgerLog",
       "otherEntityRelationshipName": "ledgerTransaction",
       "ownerSide": true,
-      "relationshipName": "ledgerTransaction",
+      "relationshipName": "ledgerTransactionLedgerLog",
       "relationshipType": "one-to-one"
     }
   ],

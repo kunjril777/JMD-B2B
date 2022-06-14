@@ -62,8 +62,8 @@
             <column name="updated_by" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="payment_id" type="bigint">
-                <constraints nullable="true" unique="true" uniqueConstraintName="ux_payment__payment_id" />
+            <column name="payment_order_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_payment__payment_order_id" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>

@@ -46,7 +46,7 @@
     {
       "otherEntityName": "product",
       "otherEntityRelationshipName": "category",
-      "relationshipName": "category",
+      "relationshipName": "categoryNproduct",
       "relationshipType": "one-to-many"
     }
   ],

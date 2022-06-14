@@ -40,7 +40,7 @@
   "relationships": [
     {
       "otherEntityName": "ledger",
-      "otherEntityRelationshipName": "ledger",
+      "otherEntityRelationshipName": "ledgerNledgerLog",
       "relationshipName": "ledger",
       "relationshipType": "many-to-one"
     }

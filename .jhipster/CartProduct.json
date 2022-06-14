@@ -42,7 +42,7 @@
   "relationships": [
     {
       "otherEntityName": "cartTransaction",
-      "otherEntityRelationshipName": "cartTransaction",
+      "otherEntityRelationshipName": "cartTransactioncartProduct",
       "relationshipName": "cartTransaction",
       "relationshipType": "many-to-one"
     }

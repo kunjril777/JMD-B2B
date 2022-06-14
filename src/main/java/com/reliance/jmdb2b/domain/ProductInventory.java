@@ -41,7 +41,7 @@ public class ProductInventory implements Serializable {
     private String updatedBy;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "productVariants", "product" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "productVariantNproductInventories", "product" }, allowSetters = true)
     private ProductVariant productVariant;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

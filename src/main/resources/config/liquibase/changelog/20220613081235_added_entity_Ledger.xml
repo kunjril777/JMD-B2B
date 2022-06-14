@@ -17,6 +17,12 @@
             <column name="jio_credits" type="double">
                 <constraints nullable="true" />
             </column>
+            <column name="total_credit" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="credit_balance" type="double">
+                <constraints nullable="true" />
+            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
     </changeSet>
@@ -39,6 +45,8 @@
                   usePreparedStatements="true">
             <column name="id" type="numeric"/>
             <column name="jio_credits" type="numeric"/>
+            <column name="total_credit" type="numeric"/>
+            <column name="credit_balance" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

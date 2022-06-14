@@ -44,7 +44,7 @@ public class ProductReview implements Serializable {
     private String updatedBy;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "products", "products", "category" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "productNproductReviews", "productNproductVariants", "category" }, allowSetters = true)
     private Product product;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

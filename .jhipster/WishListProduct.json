@@ -42,7 +42,7 @@
   "relationships": [
     {
       "otherEntityName": "wishList",
-      "otherEntityRelationshipName": "wishlist",
+      "otherEntityRelationshipName": "wishlistNwishListProduct",
       "relationshipName": "wishList",
       "relationshipType": "many-to-one"
     }

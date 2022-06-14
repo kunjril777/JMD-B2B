@@ -40,7 +40,7 @@ public class OrderTrackingLog implements Serializable {
     private String updatedBy;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "orders" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "orderNorderTrackingLogs" }, allowSetters = true)
     private Order order;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

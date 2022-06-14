@@ -46,7 +46,7 @@ public class Order implements Serializable {
 
     @OneToMany(mappedBy = "order")
     @JsonIgnoreProperties(value = { "order" }, allowSetters = true)
-    private Set<OrderTrackingLog> orders = new HashSet<>();
+    private Set<OrderTrackingLog> orderNorderTrackingLogs = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -154,33 +154,33 @@ public class Order implements Serializable {
         this.updatedBy = updatedBy;
     }
 
-    public Set<OrderTrackingLog> getOrders() {
-        return this.orders;
+    public Set<OrderTrackingLog> getOrderNorderTrackingLogs() {
+        return this.orderNorderTrackingLogs;
     }
 
-    public void setOrders(Set<OrderTrackingLog> orderTrackingLogs) {
-        if (this.orders != null) {
-            this.orders.forEach(i -> i.setOrder(null));
+    public void setOrderNorderTrackingLogs(Set<OrderTrackingLog> orderTrackingLogs) {
+        if (this.orderNorderTrackingLogs != null) {
+            this.orderNorderTrackingLogs.forEach(i -> i.setOrder(null));
         }
         if (orderTrackingLogs != null) {
             orderTrackingLogs.forEach(i -> i.setOrder(this));
         }
-        this.orders = orderTrackingLogs;
+        this.orderNorderTrackingLogs = orderTrackingLogs;
     }
 
-    public Order orders(Set<OrderTrackingLog> orderTrackingLogs) {
-        this.setOrders(orderTrackingLogs);
+    public Order orderNorderTrackingLogs(Set<OrderTrackingLog> orderTrackingLogs) {
+        this.setOrderNorderTrackingLogs(orderTrackingLogs);
         return this;
     }
 
-    public Order addOrder(OrderTrackingLog orderTrackingLog) {
-        this.orders.add(orderTrackingLog);
+    public Order addOrderNorderTrackingLog(OrderTrackingLog orderTrackingLog) {
+        this.orderNorderTrackingLogs.add(orderTrackingLog);
         orderTrackingLog.setOrder(this);
         return this;
     }
 
-    public Order removeOrder(OrderTrackingLog orderTrackingLog) {
-        this.orders.remove(orderTrackingLog);
+    public Order removeOrderNorderTrackingLog(OrderTrackingLog orderTrackingLog) {
+        this.orderNorderTrackingLogs.remove(orderTrackingLog);
         orderTrackingLog.setOrder(null);
         return this;
     }

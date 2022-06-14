@@ -77,10 +77,10 @@ public class Payment implements Serializable {
     @Column(name = "updated_by")
     private String updatedBy;
 
-    @JsonIgnoreProperties(value = { "orders" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "orderNorderTrackingLogs" }, allowSetters = true)
     @OneToOne
     @JoinColumn(unique = true)
-    private Order payment;
+    private Order paymentOrder;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -305,16 +305,16 @@ public class Payment implements Serializable {
         this.updatedBy = updatedBy;
     }
 
-    public Order getPayment() {
-        return this.payment;
+    public Order getPaymentOrder() {
+        return this.paymentOrder;
     }
 
-    public void setPayment(Order order) {
-        this.payment = order;
+    public void setPaymentOrder(Order order) {
+        this.paymentOrder = order;
     }
 
-    public Payment payment(Order order) {
-        this.setPayment(order);
+    public Payment paymentOrder(Order order) {
+        this.setPaymentOrder(order);
         return this;
     }
 

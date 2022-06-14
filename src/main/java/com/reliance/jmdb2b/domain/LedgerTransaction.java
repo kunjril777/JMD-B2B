@@ -52,7 +52,7 @@ public class LedgerTransaction implements Serializable {
     @JsonIgnoreProperties(value = { "ledger" }, allowSetters = true)
     @OneToOne
     @JoinColumn(unique = true)
-    private LedgerLog ledgerTransaction;
+    private LedgerLog ledgerTransactionLedgerLog;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -173,16 +173,16 @@ public class LedgerTransaction implements Serializable {
         this.updatedBy = updatedBy;
     }
 
-    public LedgerLog getLedgerTransaction() {
-        return this.ledgerTransaction;
+    public LedgerLog getLedgerTransactionLedgerLog() {
+        return this.ledgerTransactionLedgerLog;
     }
 
-    public void setLedgerTransaction(LedgerLog ledgerLog) {
-        this.ledgerTransaction = ledgerLog;
+    public void setLedgerTransactionLedgerLog(LedgerLog ledgerLog) {
+        this.ledgerTransactionLedgerLog = ledgerLog;
     }
 
-    public LedgerTransaction ledgerTransaction(LedgerLog ledgerLog) {
-        this.setLedgerTransaction(ledgerLog);
+    public LedgerTransaction ledgerTransactionLedgerLog(LedgerLog ledgerLog) {
+        this.setLedgerTransactionLedgerLog(ledgerLog);
         return this;
     }
 

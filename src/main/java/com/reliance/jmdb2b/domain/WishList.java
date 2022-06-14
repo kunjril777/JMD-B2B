@@ -38,10 +38,13 @@ public class WishList implements Serializable {
 
     @OneToMany(mappedBy = "wishList")
     @JsonIgnoreProperties(value = { "wishList" }, allowSetters = true)
-    private Set<WishListProduct> wishlists = new HashSet<>();
+    private Set<WishListProduct> wishlistNwishListProducts = new HashSet<>();
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "userB2B", "userB2BS", "userB2BS", "userB2BS" }, allowSetters = true)
+    @JsonIgnoreProperties(
+        value = { "userB2BLedger", "userB2BcarTransactions", "userB2Baddresses", "userB2BwishLists" },
+        allowSetters = true
+    )
     private UserB2B userB2B;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -124,33 +127,33 @@ public class WishList implements Serializable {
         this.updatedBy = updatedBy;
     }
 
-    public Set<WishListProduct> getWishlists() {
-        return this.wishlists;
+    public Set<WishListProduct> getWishlistNwishListProducts() {
+        return this.wishlistNwishListProducts;
     }
 
-    public void setWishlists(Set<WishListProduct> wishListProducts) {
-        if (this.wishlists != null) {
-            this.wishlists.forEach(i -> i.setWishList(null));
+    public void setWishlistNwishListProducts(Set<WishListProduct> wishListProducts) {
+        if (this.wishlistNwishListProducts != null) {
+            this.wishlistNwishListProducts.forEach(i -> i.setWishList(null));
         }
         if (wishListProducts != null) {
             wishListProducts.forEach(i -> i.setWishList(this));
         }
-        this.wishlists = wishListProducts;
+        this.wishlistNwishListProducts = wishListProducts;
     }
 
-    public WishList wishlists(Set<WishListProduct> wishListProducts) {
-        this.setWishlists(wishListProducts);
+    public WishList wishlistNwishListProducts(Set<WishListProduct> wishListProducts) {
+        this.setWishlistNwishListProducts(wishListProducts);
         return this;
     }
 
-    public WishList addWishlist(WishListProduct wishListProduct) {
-        this.wishlists.add(wishListProduct);
+    public WishList addWishlistNwishListProduct(WishListProduct wishListProduct) {
+        this.wishlistNwishListProducts.add(wishListProduct);
         wishListProduct.setWishList(this);
         return this;
     }
 
-    public WishList removeWishlist(WishListProduct wishListProduct) {
-        this.wishlists.remove(wishListProduct);
+    public WishList removeWishlistNwishListProduct(WishListProduct wishListProduct) {
+        this.wishlistNwishListProducts.remove(wishListProduct);
         wishListProduct.setWishList(null);
         return this;
     }

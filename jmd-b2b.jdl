@@ -34,6 +34,8 @@ entity CartProduct{
 }
 entity Ledger {
     jioCredits Double
+    totalCredit Double
+    creditBalance Double
 }
 entity LedgerLog {
     amount Double
@@ -255,23 +257,23 @@ entity PincodeDeliveryMapping {
     updatedBy String
 }
 relationship OneToOne {
-	Payment{payment} to Order
-	LedgerTransaction{ledgerTransaction} to LedgerLog
+	Payment{paymentOrder} to Order
+	LedgerTransaction{ledgerTransactionLedgerLog} to LedgerLog
 	Category{category} to Category
-	UserB2B{userB2B} to Ledger
+	UserB2B{userB2BLedger} to Ledger
 }
 relationship OneToMany{
-	Product{product} to ProductReview
-	Product{product} to ProductVariant
-	Category{category} to Product
-	ProductVariant{productVariant} to ProductInventory
-	Order{order} to OrderTrackingLog
-	UserB2B{userB2B} to CartTransaction
-	UserB2B{userB2B} to Address
-    UserB2B{userB2B} to WishList
-	CartTransaction{cartTransaction} to CartProduct
-	WishList{wishlist} to WishListProduct
-	Ledger{ledger} to LedgerLog
+	Product{productNproductReview} to ProductReview
+	Product{productNproductVariant} to ProductVariant
+	Category{categoryNproduct} to Product
+	ProductVariant{productVariantNproductInventory} to ProductInventory
+	Order{orderNorderTrackingLog} to OrderTrackingLog
+	UserB2B{userB2BcarTransaction} to CartTransaction
+	UserB2B{userB2Baddress} to Address
+    UserB2B{userB2BwishList} to WishList
+	CartTransaction{cartTransactioncartProduct} to CartProduct
+	WishList{wishlistNwishListProduct} to WishListProduct
+	Ledger{ledgerNledgerLog} to LedgerLog
 }
 
 enum PAYMENTSTATUS {

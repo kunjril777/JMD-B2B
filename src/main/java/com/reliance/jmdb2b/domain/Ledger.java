@@ -23,9 +23,15 @@ public class Ledger implements Serializable {
     @Column(name = "jio_credits")
     private Double jioCredits;
 
+    @Column(name = "total_credit")
+    private Double totalCredit;
+
+    @Column(name = "credit_balance")
+    private Double creditBalance;
+
     @OneToMany(mappedBy = "ledger")
     @JsonIgnoreProperties(value = { "ledger" }, allowSetters = true)
-    private Set<LedgerLog> ledgers = new HashSet<>();
+    private Set<LedgerLog> ledgerNledgerLogs = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -55,33 +61,59 @@ public class Ledger implements Serializable {
         this.jioCredits = jioCredits;
     }
 
-    public Set<LedgerLog> getLedgers() {
-        return this.ledgers;
+    public Double getTotalCredit() {
+        return this.totalCredit;
     }
 
-    public void setLedgers(Set<LedgerLog> ledgerLogs) {
-        if (this.ledgers != null) {
-            this.ledgers.forEach(i -> i.setLedger(null));
+    public Ledger totalCredit(Double totalCredit) {
+        this.setTotalCredit(totalCredit);
+        return this;
+    }
+
+    public void setTotalCredit(Double totalCredit) {
+        this.totalCredit = totalCredit;
+    }
+
+    public Double getCreditBalance() {
+        return this.creditBalance;
+    }
+
+    public Ledger creditBalance(Double creditBalance) {
+        this.setCreditBalance(creditBalance);
+        return this;
+    }
+
+    public void setCreditBalance(Double creditBalance) {
+        this.creditBalance = creditBalance;
+    }
+
+    public Set<LedgerLog> getLedgerNledgerLogs() {
+        return this.ledgerNledgerLogs;
+    }
+
+    public void setLedgerNledgerLogs(Set<LedgerLog> ledgerLogs) {
+        if (this.ledgerNledgerLogs != null) {
+            this.ledgerNledgerLogs.forEach(i -> i.setLedger(null));
         }
         if (ledgerLogs != null) {
             ledgerLogs.forEach(i -> i.setLedger(this));
         }
-        this.ledgers = ledgerLogs;
+        this.ledgerNledgerLogs = ledgerLogs;
     }
 
-    public Ledger ledgers(Set<LedgerLog> ledgerLogs) {
-        this.setLedgers(ledgerLogs);
+    public Ledger ledgerNledgerLogs(Set<LedgerLog> ledgerLogs) {
+        this.setLedgerNledgerLogs(ledgerLogs);
         return this;
     }
 
-    public Ledger addLedger(LedgerLog ledgerLog) {
-        this.ledgers.add(ledgerLog);
+    public Ledger addLedgerNledgerLog(LedgerLog ledgerLog) {
+        this.ledgerNledgerLogs.add(ledgerLog);
         ledgerLog.setLedger(this);
         return this;
     }
 
-    public Ledger removeLedger(LedgerLog ledgerLog) {
-        this.ledgers.remove(ledgerLog);
+    public Ledger removeLedgerNledgerLog(LedgerLog ledgerLog) {
+        this.ledgerNledgerLogs.remove(ledgerLog);
         ledgerLog.setLedger(null);
         return this;
     }
@@ -111,6 +143,8 @@ public class Ledger implements Serializable {
         return "Ledger{" +
             "id=" + getId() +
             ", jioCredits=" + getJioCredits() +
+            ", totalCredit=" + getTotalCredit() +
+            ", creditBalance=" + getCreditBalance() +
             "}";
     }
 }

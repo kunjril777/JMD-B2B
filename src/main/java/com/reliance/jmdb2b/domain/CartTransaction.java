@@ -56,10 +56,13 @@ public class CartTransaction implements Serializable {
 
     @OneToMany(mappedBy = "cartTransaction")
     @JsonIgnoreProperties(value = { "cartTransaction" }, allowSetters = true)
-    private Set<CartProduct> cartTransactions = new HashSet<>();
+    private Set<CartProduct> cartTransactioncartProducts = new HashSet<>();
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "userB2B", "userB2BS", "userB2BS", "userB2BS" }, allowSetters = true)
+    @JsonIgnoreProperties(
+        value = { "userB2BLedger", "userB2BcarTransactions", "userB2Baddresses", "userB2BwishLists" },
+        allowSetters = true
+    )
     private UserB2B userB2B;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -220,33 +223,33 @@ public class CartTransaction implements Serializable {
         this.updatedBy = updatedBy;
     }
 
-    public Set<CartProduct> getCartTransactions() {
-        return this.cartTransactions;
+    public Set<CartProduct> getCartTransactioncartProducts() {
+        return this.cartTransactioncartProducts;
     }
 
-    public void setCartTransactions(Set<CartProduct> cartProducts) {
-        if (this.cartTransactions != null) {
-            this.cartTransactions.forEach(i -> i.setCartTransaction(null));
+    public void setCartTransactioncartProducts(Set<CartProduct> cartProducts) {
+        if (this.cartTransactioncartProducts != null) {
+            this.cartTransactioncartProducts.forEach(i -> i.setCartTransaction(null));
         }
         if (cartProducts != null) {
             cartProducts.forEach(i -> i.setCartTransaction(this));
         }
-        this.cartTransactions = cartProducts;
+        this.cartTransactioncartProducts = cartProducts;
     }
 
-    public CartTransaction cartTransactions(Set<CartProduct> cartProducts) {
-        this.setCartTransactions(cartProducts);
+    public CartTransaction cartTransactioncartProducts(Set<CartProduct> cartProducts) {
+        this.setCartTransactioncartProducts(cartProducts);
         return this;
     }
 
-    public CartTransaction addCartTransaction(CartProduct cartProduct) {
-        this.cartTransactions.add(cartProduct);
+    public CartTransaction addCartTransactioncartProduct(CartProduct cartProduct) {
+        this.cartTransactioncartProducts.add(cartProduct);
         cartProduct.setCartTransaction(this);
         return this;
     }
 
-    public CartTransaction removeCartTransaction(CartProduct cartProduct) {
-        this.cartTransactions.remove(cartProduct);
+    public CartTransaction removeCartTransactioncartProduct(CartProduct cartProduct) {
+        this.cartTransactioncartProducts.remove(cartProduct);
         cartProduct.setCartTransaction(null);
         return this;
     }

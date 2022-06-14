@@ -70,7 +70,10 @@ public class Address implements Serializable {
     private String updatedBy;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "userB2B", "userB2BS", "userB2BS", "userB2BS" }, allowSetters = true)
+    @JsonIgnoreProperties(
+        value = { "userB2BLedger", "userB2BcarTransactions", "userB2Baddresses", "userB2BwishLists" },
+        allowSetters = true
+    )
     private UserB2B userB2B;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

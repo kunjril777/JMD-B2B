@@ -50,40 +50,22 @@ public class UserB2B implements Serializable {
     @Column(name = "updated_by", nullable = false)
     private String updatedBy;
 
-    @JsonIgnoreProperties(value = { "ledgers" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "ledgerNledgerLogs" }, allowSetters = true)
     @OneToOne
     @JoinColumn(unique = true)
-    @OneToMany(mappedBy = "userB2B")
-    @OneToMany(mappedBy = "userB2B")
-    @OneToMany(mappedBy = "userB2B")
-    private Ledger userB2B;
+    private Ledger userB2BLedger;
 
-    @JsonIgnoreProperties(value = { "ledgers" }, allowSetters = true)
-    @OneToOne
-    @JoinColumn(unique = true)
     @OneToMany(mappedBy = "userB2B")
-    @OneToMany(mappedBy = "userB2B")
-    @OneToMany(mappedBy = "userB2B")
-    @JsonIgnoreProperties(value = { "cartTransactions", "userB2B" }, allowSetters = true)
-    private Set<CartTransaction> userB2BS = new HashSet<>();
+    @JsonIgnoreProperties(value = { "cartTransactioncartProducts", "userB2B" }, allowSetters = true)
+    private Set<CartTransaction> userB2BcarTransactions = new HashSet<>();
 
-    @JsonIgnoreProperties(value = { "ledgers" }, allowSetters = true)
-    @OneToOne
-    @JoinColumn(unique = true)
-    @OneToMany(mappedBy = "userB2B")
-    @OneToMany(mappedBy = "userB2B")
     @OneToMany(mappedBy = "userB2B")
     @JsonIgnoreProperties(value = { "userB2B" }, allowSetters = true)
-    private Set<Address> userB2BS = new HashSet<>();
+    private Set<Address> userB2Baddresses = new HashSet<>();
 
-    @JsonIgnoreProperties(value = { "ledgers" }, allowSetters = true)
-    @OneToOne
-    @JoinColumn(unique = true)
     @OneToMany(mappedBy = "userB2B")
-    @OneToMany(mappedBy = "userB2B")
-    @OneToMany(mappedBy = "userB2B")
-    @JsonIgnoreProperties(value = { "wishlists", "userB2B" }, allowSetters = true)
-    private Set<WishList> userB2BS = new HashSet<>();
+    @JsonIgnoreProperties(value = { "wishlistNwishListProducts", "userB2B" }, allowSetters = true)
+    private Set<WishList> userB2BwishLists = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -191,108 +173,108 @@ public class UserB2B implements Serializable {
         this.updatedBy = updatedBy;
     }
 
-    public Ledger getUserB2B() {
-        return this.userB2B;
+    public Ledger getUserB2BLedger() {
+        return this.userB2BLedger;
     }
 
-    public void setUserB2B(Ledger ledger) {
-        this.userB2B = ledger;
+    public void setUserB2BLedger(Ledger ledger) {
+        this.userB2BLedger = ledger;
     }
 
-    public UserB2B userB2B(Ledger ledger) {
-        this.setUserB2B(ledger);
+    public UserB2B userB2BLedger(Ledger ledger) {
+        this.setUserB2BLedger(ledger);
         return this;
     }
 
-    public Set<CartTransaction> getUserB2BS() {
-        return this.userB2BS;
+    public Set<CartTransaction> getUserB2BcarTransactions() {
+        return this.userB2BcarTransactions;
     }
 
-    public void setUserB2BS(Set<CartTransaction> cartTransactions) {
-        if (this.userB2BS != null) {
-            this.userB2BS.forEach(i -> i.setUserB2B(null));
+    public void setUserB2BcarTransactions(Set<CartTransaction> cartTransactions) {
+        if (this.userB2BcarTransactions != null) {
+            this.userB2BcarTransactions.forEach(i -> i.setUserB2B(null));
         }
         if (cartTransactions != null) {
             cartTransactions.forEach(i -> i.setUserB2B(this));
         }
-        this.userB2BS = cartTransactions;
+        this.userB2BcarTransactions = cartTransactions;
     }
 
-    public UserB2B userB2BS(Set<CartTransaction> cartTransactions) {
-        this.setUserB2BS(cartTransactions);
+    public UserB2B userB2BcarTransactions(Set<CartTransaction> cartTransactions) {
+        this.setUserB2BcarTransactions(cartTransactions);
         return this;
     }
 
-    public UserB2B addUserB2B(CartTransaction cartTransaction) {
-        this.userB2BS.add(cartTransaction);
+    public UserB2B addUserB2BcarTransaction(CartTransaction cartTransaction) {
+        this.userB2BcarTransactions.add(cartTransaction);
         cartTransaction.setUserB2B(this);
         return this;
     }
 
-    public UserB2B removeUserB2B(CartTransaction cartTransaction) {
-        this.userB2BS.remove(cartTransaction);
+    public UserB2B removeUserB2BcarTransaction(CartTransaction cartTransaction) {
+        this.userB2BcarTransactions.remove(cartTransaction);
         cartTransaction.setUserB2B(null);
         return this;
     }
 
-    public Set<Address> getUserB2BS() {
-        return this.userB2BS;
+    public Set<Address> getUserB2Baddresses() {
+        return this.userB2Baddresses;
     }
 
-    public void setUserB2BS(Set<Address> addresses) {
-        if (this.userB2BS != null) {
-            this.userB2BS.forEach(i -> i.setUserB2B(null));
+    public void setUserB2Baddresses(Set<Address> addresses) {
+        if (this.userB2Baddresses != null) {
+            this.userB2Baddresses.forEach(i -> i.setUserB2B(null));
         }
         if (addresses != null) {
             addresses.forEach(i -> i.setUserB2B(this));
         }
-        this.userB2BS = addresses;
+        this.userB2Baddresses = addresses;
     }
 
-    public UserB2B userB2BS(Set<Address> addresses) {
-        this.setUserB2BS(addresses);
+    public UserB2B userB2Baddresses(Set<Address> addresses) {
+        this.setUserB2Baddresses(addresses);
         return this;
     }
 
-    public UserB2B addUserB2B(Address address) {
-        this.userB2BS.add(address);
+    public UserB2B addUserB2Baddress(Address address) {
+        this.userB2Baddresses.add(address);
         address.setUserB2B(this);
         return this;
     }
 
-    public UserB2B removeUserB2B(Address address) {
-        this.userB2BS.remove(address);
+    public UserB2B removeUserB2Baddress(Address address) {
+        this.userB2Baddresses.remove(address);
         address.setUserB2B(null);
         return this;
     }
 
-    public Set<WishList> getUserB2BS() {
-        return this.userB2BS;
+    public Set<WishList> getUserB2BwishLists() {
+        return this.userB2BwishLists;
     }
 
-    public void setUserB2BS(Set<WishList> wishLists) {
-        if (this.userB2BS != null) {
-            this.userB2BS.forEach(i -> i.setUserB2B(null));
+    public void setUserB2BwishLists(Set<WishList> wishLists) {
+        if (this.userB2BwishLists != null) {
+            this.userB2BwishLists.forEach(i -> i.setUserB2B(null));
         }
         if (wishLists != null) {
             wishLists.forEach(i -> i.setUserB2B(this));
         }
-        this.userB2BS = wishLists;
+        this.userB2BwishLists = wishLists;
     }
 
-    public UserB2B userB2BS(Set<WishList> wishLists) {
-        this.setUserB2BS(wishLists);
+    public UserB2B userB2BwishLists(Set<WishList> wishLists) {
+        this.setUserB2BwishLists(wishLists);
         return this;
     }
 
-    public UserB2B addUserB2B(WishList wishList) {
-        this.userB2BS.add(wishList);
+    public UserB2B addUserB2BwishList(WishList wishList) {
+        this.userB2BwishLists.add(wishList);
         wishList.setUserB2B(this);
         return this;
     }
 
-    public UserB2B removeUserB2B(WishList wishList) {
-        this.userB2BS.remove(wishList);
+    public UserB2B removeUserB2BwishList(WishList wishList) {
+        this.userB2BwishLists.remove(wishList);
         wishList.setUserB2B(null);
         return this;
     }

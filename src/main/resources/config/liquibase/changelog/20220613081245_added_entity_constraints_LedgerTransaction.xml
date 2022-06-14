@@ -8,9 +8,9 @@
     -->
     <changeSet id="20220613081245-2" author="jhipster">
 
-        <addForeignKeyConstraint baseColumnNames="ledger_transaction_id"
+        <addForeignKeyConstraint baseColumnNames="ledger_transaction_ledger_log_id"
                                  baseTableName="ledger_transaction"
-                                 constraintName="fk_ledger_transaction__ledger_transaction_id"
+                                 constraintName="fk_ledger_transaction__ledger_transaction_ledger_log_id"
                                  referencedColumnNames="id"
                                  referencedTableName="ledger_log"/>
     </changeSet>

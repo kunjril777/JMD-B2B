@@ -124,6 +124,12 @@ public class LedgerResource {
                 if (ledger.getJioCredits() != null) {
                     existingLedger.setJioCredits(ledger.getJioCredits());
                 }
+                if (ledger.getTotalCredit() != null) {
+                    existingLedger.setTotalCredit(ledger.getTotalCredit());
+                }
+                if (ledger.getCreditBalance() != null) {
+                    existingLedger.setCreditBalance(ledger.getCreditBalance());
+                }
 
                 return existingLedger;
             })

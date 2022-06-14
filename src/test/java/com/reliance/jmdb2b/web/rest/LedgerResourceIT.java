@@ -32,6 +32,12 @@ class LedgerResourceIT {
     private static final Double DEFAULT_JIO_CREDITS = 1D;
     private static final Double UPDATED_JIO_CREDITS = 2D;
 
+    private static final Double DEFAULT_TOTAL_CREDIT = 1D;
+    private static final Double UPDATED_TOTAL_CREDIT = 2D;
+
+    private static final Double DEFAULT_CREDIT_BALANCE = 1D;
+    private static final Double UPDATED_CREDIT_BALANCE = 2D;
+
     private static final String ENTITY_API_URL = "/api/ledgers";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -56,7 +62,10 @@ class LedgerResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Ledger createEntity(EntityManager em) {
-        Ledger ledger = new Ledger().jioCredits(DEFAULT_JIO_CREDITS);
+        Ledger ledger = new Ledger()
+            .jioCredits(DEFAULT_JIO_CREDITS)
+            .totalCredit(DEFAULT_TOTAL_CREDIT)
+            .creditBalance(DEFAULT_CREDIT_BALANCE);
         return ledger;
     }
 
@@ -67,7 +76,10 @@ class LedgerResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Ledger createUpdatedEntity(EntityManager em) {
-        Ledger ledger = new Ledger().jioCredits(UPDATED_JIO_CREDITS);
+        Ledger ledger = new Ledger()
+            .jioCredits(UPDATED_JIO_CREDITS)
+            .totalCredit(UPDATED_TOTAL_CREDIT)
+            .creditBalance(UPDATED_CREDIT_BALANCE);
         return ledger;
     }
 
@@ -90,6 +102,8 @@ class LedgerResourceIT {
         assertThat(ledgerList).hasSize(databaseSizeBeforeCreate + 1);
         Ledger testLedger = ledgerList.get(ledgerList.size() - 1);
         assertThat(testLedger.getJioCredits()).isEqualTo(DEFAULT_JIO_CREDITS);
+        assertThat(testLedger.getTotalCredit()).isEqualTo(DEFAULT_TOTAL_CREDIT);
+        assertThat(testLedger.getCreditBalance()).isEqualTo(DEFAULT_CREDIT_BALANCE);
     }
 
     @Test
@@ -122,7 +136,9 @@ class LedgerResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(ledger.getId().intValue())))
-            .andExpect(jsonPath("$.[*].jioCredits").value(hasItem(DEFAULT_JIO_CREDITS.doubleValue())));
+            .andExpect(jsonPath("$.[*].jioCredits").value(hasItem(DEFAULT_JIO_CREDITS.doubleValue())))
+            .andExpect(jsonPath("$.[*].totalCredit").value(hasItem(DEFAULT_TOTAL_CREDIT.doubleValue())))
+            .andExpect(jsonPath("$.[*].creditBalance").value(hasItem(DEFAULT_CREDIT_BALANCE.doubleValue())));
     }
 
     @Test
@@ -137,7 +153,9 @@ class LedgerResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(ledger.getId().intValue()))
-            .andExpect(jsonPath("$.jioCredits").value(DEFAULT_JIO_CREDITS.doubleValue()));
+            .andExpect(jsonPath("$.jioCredits").value(DEFAULT_JIO_CREDITS.doubleValue()))
+            .andExpect(jsonPath("$.totalCredit").value(DEFAULT_TOTAL_CREDIT.doubleValue()))
+            .andExpect(jsonPath("$.creditBalance").value(DEFAULT_CREDIT_BALANCE.doubleValue()));
     }
 
     @Test
@@ -159,7 +177,7 @@ class LedgerResourceIT {
         Ledger updatedLedger = ledgerRepository.findById(ledger.getId()).get();
         // Disconnect from session so that the updates on updatedLedger are not directly saved in db
         em.detach(updatedLedger);
-        updatedLedger.jioCredits(UPDATED_JIO_CREDITS);
+        updatedLedger.jioCredits(UPDATED_JIO_CREDITS).totalCredit(UPDATED_TOTAL_CREDIT).creditBalance(UPDATED_CREDIT_BALANCE);
 
         restLedgerMockMvc
             .perform(
@@ -174,6 +192,8 @@ class LedgerResourceIT {
         assertThat(ledgerList).hasSize(databaseSizeBeforeUpdate);
         Ledger testLedger = ledgerList.get(ledgerList.size() - 1);
         assertThat(testLedger.getJioCredits()).isEqualTo(UPDATED_JIO_CREDITS);
+        assertThat(testLedger.getTotalCredit()).isEqualTo(UPDATED_TOTAL_CREDIT);
+        assertThat(testLedger.getCreditBalance()).isEqualTo(UPDATED_CREDIT_BALANCE);
     }
 
     @Test
@@ -257,6 +277,8 @@ class LedgerResourceIT {
         assertThat(ledgerList).hasSize(databaseSizeBeforeUpdate);
         Ledger testLedger = ledgerList.get(ledgerList.size() - 1);
         assertThat(testLedger.getJioCredits()).isEqualTo(DEFAULT_JIO_CREDITS);
+        assertThat(testLedger.getTotalCredit()).isEqualTo(DEFAULT_TOTAL_CREDIT);
+        assertThat(testLedger.getCreditBalance()).isEqualTo(DEFAULT_CREDIT_BALANCE);
     }
 
     @Test
@@ -271,7 +293,7 @@ class LedgerResourceIT {
         Ledger partialUpdatedLedger = new Ledger();
         partialUpdatedLedger.setId(ledger.getId());
 
-        partialUpdatedLedger.jioCredits(UPDATED_JIO_CREDITS);
+        partialUpdatedLedger.jioCredits(UPDATED_JIO_CREDITS).totalCredit(UPDATED_TOTAL_CREDIT).creditBalance(UPDATED_CREDIT_BALANCE);
 
         restLedgerMockMvc
             .perform(
@@ -286,6 +308,8 @@ class LedgerResourceIT {
         assertThat(ledgerList).hasSize(databaseSizeBeforeUpdate);
         Ledger testLedger = ledgerList.get(ledgerList.size() - 1);
         assertThat(testLedger.getJioCredits()).isEqualTo(UPDATED_JIO_CREDITS);
+        assertThat(testLedger.getTotalCredit()).isEqualTo(UPDATED_TOTAL_CREDIT);
+        assertThat(testLedger.getCreditBalance()).isEqualTo(UPDATED_CREDIT_BALANCE);
     }
 
     @Test

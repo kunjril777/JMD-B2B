@@ -41,7 +41,7 @@ public class WishListProduct implements Serializable {
     private String updatedBy;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "wishlists", "userB2B" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "wishlistNwishListProducts", "userB2B" }, allowSetters = true)
     private WishList wishList;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

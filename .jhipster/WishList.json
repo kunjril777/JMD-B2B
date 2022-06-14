@@ -35,12 +35,12 @@
     {
       "otherEntityName": "wishListProduct",
       "otherEntityRelationshipName": "wishList",
-      "relationshipName": "wishlist",
+      "relationshipName": "wishlistNwishListProduct",
       "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "userB2B",
-      "otherEntityRelationshipName": "userB2B",
+      "otherEntityRelationshipName": "userB2BwishList",
       "relationshipName": "userB2B",
       "relationshipType": "many-to-one"
     }

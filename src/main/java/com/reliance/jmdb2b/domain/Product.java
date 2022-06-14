@@ -57,17 +57,15 @@ public class Product implements Serializable {
     private String updatedBy;
 
     @OneToMany(mappedBy = "product")
-    @OneToMany(mappedBy = "product")
     @JsonIgnoreProperties(value = { "product" }, allowSetters = true)
-    private Set<ProductReview> products = new HashSet<>();
+    private Set<ProductReview> productNproductReviews = new HashSet<>();
 
     @OneToMany(mappedBy = "product")
-    @OneToMany(mappedBy = "product")
-    @JsonIgnoreProperties(value = { "productVariants", "product" }, allowSetters = true)
-    private Set<ProductVariant> products = new HashSet<>();
+    @JsonIgnoreProperties(value = { "productVariantNproductInventories", "product" }, allowSetters = true)
+    private Set<ProductVariant> productNproductVariants = new HashSet<>();
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "category", "categories" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "category", "categoryNproducts" }, allowSetters = true)
     private Category category;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -228,64 +226,64 @@ public class Product implements Serializable {
         this.updatedBy = updatedBy;
     }
 
-    public Set<ProductReview> getProducts() {
-        return this.products;
+    public Set<ProductReview> getProductNproductReviews() {
+        return this.productNproductReviews;
     }
 
-    public void setProducts(Set<ProductReview> productReviews) {
-        if (this.products != null) {
-            this.products.forEach(i -> i.setProduct(null));
+    public void setProductNproductReviews(Set<ProductReview> productReviews) {
+        if (this.productNproductReviews != null) {
+            this.productNproductReviews.forEach(i -> i.setProduct(null));
         }
         if (productReviews != null) {
             productReviews.forEach(i -> i.setProduct(this));
         }
-        this.products = productReviews;
+        this.productNproductReviews = productReviews;
     }
 
-    public Product products(Set<ProductReview> productReviews) {
-        this.setProducts(productReviews);
+    public Product productNproductReviews(Set<ProductReview> productReviews) {
+        this.setProductNproductReviews(productReviews);
         return this;
     }
 
-    public Product addProduct(ProductReview productReview) {
-        this.products.add(productReview);
+    public Product addProductNproductReview(ProductReview productReview) {
+        this.productNproductReviews.add(productReview);
         productReview.setProduct(this);
         return this;
     }
 
-    public Product removeProduct(ProductReview productReview) {
-        this.products.remove(productReview);
+    public Product removeProductNproductReview(ProductReview productReview) {
+        this.productNproductReviews.remove(productReview);
         productReview.setProduct(null);
         return this;
     }
 
-    public Set<ProductVariant> getProducts() {
-        return this.products;
+    public Set<ProductVariant> getProductNproductVariants() {
+        return this.productNproductVariants;
     }
 
-    public void setProducts(Set<ProductVariant> productVariants) {
-        if (this.products != null) {
-            this.products.forEach(i -> i.setProduct(null));
+    public void setProductNproductVariants(Set<ProductVariant> productVariants) {
+        if (this.productNproductVariants != null) {
+            this.productNproductVariants.forEach(i -> i.setProduct(null));
         }
         if (productVariants != null) {
             productVariants.forEach(i -> i.setProduct(this));
         }
-        this.products = productVariants;
+        this.productNproductVariants = productVariants;
     }
 
-    public Product products(Set<ProductVariant> productVariants) {
-        this.setProducts(productVariants);
+    public Product productNproductVariants(Set<ProductVariant> productVariants) {
+        this.setProductNproductVariants(productVariants);
         return this;
     }
 
-    public Product addProduct(ProductVariant productVariant) {
-        this.products.add(productVariant);
+    public Product addProductNproductVariant(ProductVariant productVariant) {
+        this.productNproductVariants.add(productVariant);
         productVariant.setProduct(this);
         return this;
     }
 
-    public Product removeProduct(ProductVariant productVariant) {
-        this.products.remove(productVariant);
+    public Product removeProductNproductVariant(ProductVariant productVariant) {
+        this.productNproductVariants.remove(productVariant);
         productVariant.setProduct(null);
         return this;
     }

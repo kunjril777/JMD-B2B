@@ -42,7 +42,7 @@
   "relationships": [
     {
       "otherEntityName": "productVariant",
-      "otherEntityRelationshipName": "productVariant",
+      "otherEntityRelationshipName": "productVariantNproductInventory",
       "relationshipName": "productVariant",
       "relationshipType": "many-to-one"
     }

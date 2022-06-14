@@ -8,6 +8,14 @@
     {
       "fieldName": "jioCredits",
       "fieldType": "Double"
+    },
+    {
+      "fieldName": "totalCredit",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "creditBalance",
+      "fieldType": "Double"
     }
   ],
   "fluentMethods": true,
@@ -19,7 +27,7 @@
     {
       "otherEntityName": "ledgerLog",
       "otherEntityRelationshipName": "ledger",
-      "relationshipName": "ledger",
+      "relationshipName": "ledgerNledgerLog",
       "relationshipType": "one-to-many"
     }
   ],

@@ -38,18 +38,14 @@ public class Category implements Serializable {
     @Column(name = "category_status")
     private Boolean categoryStatus;
 
-    @JsonIgnoreProperties(value = { "category", "categories" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "category", "categoryNproducts" }, allowSetters = true)
     @OneToOne
     @JoinColumn(unique = true)
-    @OneToMany(mappedBy = "category")
     private Category category;
 
-    @JsonIgnoreProperties(value = { "category", "categories" }, allowSetters = true)
-    @OneToOne
-    @JoinColumn(unique = true)
     @OneToMany(mappedBy = "category")
-    @JsonIgnoreProperties(value = { "products", "products", "category" }, allowSetters = true)
-    private Set<Product> categories = new HashSet<>();
+    @JsonIgnoreProperties(value = { "productNproductReviews", "productNproductVariants", "category" }, allowSetters = true)
+    private Set<Product> categoryNproducts = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -157,33 +153,33 @@ public class Category implements Serializable {
         return this;
     }
 
-    public Set<Product> getCategories() {
-        return this.categories;
+    public Set<Product> getCategoryNproducts() {
+        return this.categoryNproducts;
     }
 
-    public void setCategories(Set<Product> products) {
-        if (this.categories != null) {
-            this.categories.forEach(i -> i.setCategory(null));
+    public void setCategoryNproducts(Set<Product> products) {
+        if (this.categoryNproducts != null) {
+            this.categoryNproducts.forEach(i -> i.setCategory(null));
         }
         if (products != null) {
             products.forEach(i -> i.setCategory(this));
         }
-        this.categories = products;
+        this.categoryNproducts = products;
     }
 
-    public Category categories(Set<Product> products) {
-        this.setCategories(products);
+    public Category categoryNproducts(Set<Product> products) {
+        this.setCategoryNproducts(products);
         return this;
     }
 
-    public Category addCategory(Product product) {
-        this.categories.add(product);
+    public Category addCategoryNproduct(Product product) {
+        this.categoryNproducts.add(product);
         product.setCategory(this);
         return this;
     }
 
-    public Category removeCategory(Product product) {
-        this.categories.remove(product);
+    public Category removeCategoryNproduct(Product product) {
+        this.categoryNproducts.remove(product);
         product.setCategory(null);
         return this;
     }

@@ -85,7 +85,7 @@
       "otherEntityName": "order",
       "otherEntityRelationshipName": "payment",
       "ownerSide": true,
-      "relationshipName": "payment",
+      "relationshipName": "paymentOrder",
       "relationshipType": "one-to-one"
     }
   ],

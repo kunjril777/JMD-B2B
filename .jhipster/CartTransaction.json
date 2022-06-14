@@ -59,12 +59,12 @@
     {
       "otherEntityName": "cartProduct",
       "otherEntityRelationshipName": "cartTransaction",
-      "relationshipName": "cartTransaction",
+      "relationshipName": "cartTransactioncartProduct",
       "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "userB2B",
-      "otherEntityRelationshipName": "userB2B",
+      "otherEntityRelationshipName": "userB2BcarTransaction",
       "relationshipName": "userB2B",
       "relationshipType": "many-to-one"
     }

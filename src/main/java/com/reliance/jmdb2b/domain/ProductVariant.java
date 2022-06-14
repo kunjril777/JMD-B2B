@@ -61,10 +61,10 @@ public class ProductVariant implements Serializable {
 
     @OneToMany(mappedBy = "productVariant")
     @JsonIgnoreProperties(value = { "productVariant" }, allowSetters = true)
-    private Set<ProductInventory> productVariants = new HashSet<>();
+    private Set<ProductInventory> productVariantNproductInventories = new HashSet<>();
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "products", "products", "category" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "productNproductReviews", "productNproductVariants", "category" }, allowSetters = true)
     private Product product;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -238,33 +238,33 @@ public class ProductVariant implements Serializable {
         this.updatedBy = updatedBy;
     }
 
-    public Set<ProductInventory> getProductVariants() {
-        return this.productVariants;
+    public Set<ProductInventory> getProductVariantNproductInventories() {
+        return this.productVariantNproductInventories;
     }
 
-    public void setProductVariants(Set<ProductInventory> productInventories) {
-        if (this.productVariants != null) {
-            this.productVariants.forEach(i -> i.setProductVariant(null));
+    public void setProductVariantNproductInventories(Set<ProductInventory> productInventories) {
+        if (this.productVariantNproductInventories != null) {
+            this.productVariantNproductInventories.forEach(i -> i.setProductVariant(null));
         }
         if (productInventories != null) {
             productInventories.forEach(i -> i.setProductVariant(this));
         }
-        this.productVariants = productInventories;
+        this.productVariantNproductInventories = productInventories;
     }
 
-    public ProductVariant productVariants(Set<ProductInventory> productInventories) {
-        this.setProductVariants(productInventories);
+    public ProductVariant productVariantNproductInventories(Set<ProductInventory> productInventories) {
+        this.setProductVariantNproductInventories(productInventories);
         return this;
     }
 
-    public ProductVariant addProductVariant(ProductInventory productInventory) {
-        this.productVariants.add(productInventory);
+    public ProductVariant addProductVariantNproductInventory(ProductInventory productInventory) {
+        this.productVariantNproductInventories.add(productInventory);
         productInventory.setProductVariant(this);
         return this;
     }
 
-    public ProductVariant removeProductVariant(ProductInventory productInventory) {
-        this.productVariants.remove(productInventory);
+    public ProductVariant removeProductVariantNproductInventory(ProductInventory productInventory) {
+        this.productVariantNproductInventories.remove(productInventory);
         productInventory.setProductVariant(null);
         return this;
     }

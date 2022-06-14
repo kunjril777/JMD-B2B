@@ -51,25 +51,25 @@
       "otherEntityName": "ledger",
       "otherEntityRelationshipName": "userB2B",
       "ownerSide": true,
-      "relationshipName": "userB2B",
+      "relationshipName": "userB2BLedger",
       "relationshipType": "one-to-one"
     },
     {
       "otherEntityName": "cartTransaction",
       "otherEntityRelationshipName": "userB2B",
-      "relationshipName": "userB2B",
+      "relationshipName": "userB2BcarTransaction",
       "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "address",
       "otherEntityRelationshipName": "userB2B",
-      "relationshipName": "userB2B",
+      "relationshipName": "userB2Baddress",
       "relationshipType": "one-to-many"
     },
     {
       "otherEntityName": "wishList",
       "otherEntityRelationshipName": "userB2B",
-      "relationshipName": "userB2B",
+      "relationshipName": "userB2BwishList",
       "relationshipType": "one-to-many"
     }
   ],
