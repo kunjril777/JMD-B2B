@@ -20,9 +20,6 @@
             <column name="parentcategory" type="bigint">
                 <constraints nullable="true" />
             </column>
-            <column name="attributes" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
             <column name="level" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -58,7 +55,6 @@
             <column name="id" type="numeric"/>
             <column name="title" type="string"/>
             <column name="parentcategory" type="numeric"/>
-            <column name="attributes" type="string"/>
             <column name="level" type="string"/>
             <column name="description" type="string"/>
             <column name="category_status" type="boolean"/>

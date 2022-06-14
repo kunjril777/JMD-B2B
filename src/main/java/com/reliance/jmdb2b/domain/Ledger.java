@@ -20,14 +20,11 @@ public class Ledger implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "jio_credits")
-    private Double jioCredits;
+    @Column(name = "jio_credits_available")
+    private Double jioCreditsAvailable;
 
-    @Column(name = "total_credit")
-    private Double totalCredit;
-
-    @Column(name = "credit_balance")
-    private Double creditBalance;
+    @Column(name = "jio_credit_limit")
+    private Double jioCreditLimit;
 
     @OneToMany(mappedBy = "ledger")
     @JsonIgnoreProperties(value = { "ledger" }, allowSetters = true)
@@ -48,43 +45,30 @@ public class Ledger implements Serializable {
         this.id = id;
     }
 
-    public Double getJioCredits() {
-        return this.jioCredits;
+    public Double getJioCreditsAvailable() {
+        return this.jioCreditsAvailable;
     }
 
-    public Ledger jioCredits(Double jioCredits) {
-        this.setJioCredits(jioCredits);
+    public Ledger jioCreditsAvailable(Double jioCreditsAvailable) {
+        this.setJioCreditsAvailable(jioCreditsAvailable);
         return this;
     }
 
-    public void setJioCredits(Double jioCredits) {
-        this.jioCredits = jioCredits;
+    public void setJioCreditsAvailable(Double jioCreditsAvailable) {
+        this.jioCreditsAvailable = jioCreditsAvailable;
     }
 
-    public Double getTotalCredit() {
-        return this.totalCredit;
+    public Double getJioCreditLimit() {
+        return this.jioCreditLimit;
     }
 
-    public Ledger totalCredit(Double totalCredit) {
-        this.setTotalCredit(totalCredit);
+    public Ledger jioCreditLimit(Double jioCreditLimit) {
+        this.setJioCreditLimit(jioCreditLimit);
         return this;
     }
 
-    public void setTotalCredit(Double totalCredit) {
-        this.totalCredit = totalCredit;
-    }
-
-    public Double getCreditBalance() {
-        return this.creditBalance;
-    }
-
-    public Ledger creditBalance(Double creditBalance) {
-        this.setCreditBalance(creditBalance);
-        return this;
-    }
-
-    public void setCreditBalance(Double creditBalance) {
-        this.creditBalance = creditBalance;
+    public void setJioCreditLimit(Double jioCreditLimit) {
+        this.jioCreditLimit = jioCreditLimit;
     }
 
     public Set<LedgerLog> getLedgerNledgerLogs() {
@@ -142,9 +126,8 @@ public class Ledger implements Serializable {
     public String toString() {
         return "Ledger{" +
             "id=" + getId() +
-            ", jioCredits=" + getJioCredits() +
-            ", totalCredit=" + getTotalCredit() +
-            ", creditBalance=" + getCreditBalance() +
+            ", jioCreditsAvailable=" + getJioCreditsAvailable() +
+            ", jioCreditLimit=" + getJioCreditLimit() +
             "}";
     }
 }

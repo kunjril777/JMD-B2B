@@ -144,9 +144,6 @@ public class ProductVariantResource {
                 if (productVariant.getTitle() != null) {
                     existingProductVariant.setTitle(productVariant.getTitle());
                 }
-                if (productVariant.getAttributes() != null) {
-                    existingProductVariant.setAttributes(productVariant.getAttributes());
-                }
                 if (productVariant.getImages() != null) {
                     existingProductVariant.setImages(productVariant.getImages());
                 }

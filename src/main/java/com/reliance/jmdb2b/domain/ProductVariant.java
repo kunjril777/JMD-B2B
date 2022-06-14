@@ -41,9 +41,6 @@ public class ProductVariant implements Serializable {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "attributes")
-    private String attributes;
-
     @Column(name = "images")
     private String images;
 
@@ -158,19 +155,6 @@ public class ProductVariant implements Serializable {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getAttributes() {
-        return this.attributes;
-    }
-
-    public ProductVariant attributes(String attributes) {
-        this.setAttributes(attributes);
-        return this;
-    }
-
-    public void setAttributes(String attributes) {
-        this.attributes = attributes;
     }
 
     public String getImages() {
@@ -312,7 +296,6 @@ public class ProductVariant implements Serializable {
             ", mrp=" + getMrp() +
             ", description='" + getDescription() + "'" +
             ", title='" + getTitle() + "'" +
-            ", attributes='" + getAttributes() + "'" +
             ", images='" + getImages() + "'" +
             ", createdTime='" + getCreatedTime() + "'" +
             ", updatedTime='" + getUpdatedTime() + "'" +

@@ -26,9 +26,6 @@ public class Category implements Serializable {
     @Column(name = "parentcategory")
     private Long parentcategory;
 
-    @Column(name = "attributes")
-    private String attributes;
-
     @Column(name = "level")
     private String level;
 
@@ -86,19 +83,6 @@ public class Category implements Serializable {
 
     public void setParentcategory(Long parentcategory) {
         this.parentcategory = parentcategory;
-    }
-
-    public String getAttributes() {
-        return this.attributes;
-    }
-
-    public Category attributes(String attributes) {
-        this.setAttributes(attributes);
-        return this;
-    }
-
-    public void setAttributes(String attributes) {
-        this.attributes = attributes;
     }
 
     public String getLevel() {
@@ -210,7 +194,6 @@ public class Category implements Serializable {
             "id=" + getId() +
             ", title='" + getTitle() + "'" +
             ", parentcategory=" + getParentcategory() +
-            ", attributes='" + getAttributes() + "'" +
             ", level='" + getLevel() + "'" +
             ", description='" + getDescription() + "'" +
             ", categoryStatus='" + getCategoryStatus() + "'" +

@@ -52,9 +52,6 @@ class ProductVariantResourceIT {
     private static final String DEFAULT_TITLE = "AAAAAAAAAA";
     private static final String UPDATED_TITLE = "BBBBBBBBBB";
 
-    private static final String DEFAULT_ATTRIBUTES = "AAAAAAAAAA";
-    private static final String UPDATED_ATTRIBUTES = "BBBBBBBBBB";
-
     private static final String DEFAULT_IMAGES = "AAAAAAAAAA";
     private static final String UPDATED_IMAGES = "BBBBBBBBBB";
 
@@ -101,7 +98,6 @@ class ProductVariantResourceIT {
             .mrp(DEFAULT_MRP)
             .description(DEFAULT_DESCRIPTION)
             .title(DEFAULT_TITLE)
-            .attributes(DEFAULT_ATTRIBUTES)
             .images(DEFAULT_IMAGES)
             .createdTime(DEFAULT_CREATED_TIME)
             .updatedTime(DEFAULT_UPDATED_TIME)
@@ -124,7 +120,6 @@ class ProductVariantResourceIT {
             .mrp(UPDATED_MRP)
             .description(UPDATED_DESCRIPTION)
             .title(UPDATED_TITLE)
-            .attributes(UPDATED_ATTRIBUTES)
             .images(UPDATED_IMAGES)
             .createdTime(UPDATED_CREATED_TIME)
             .updatedTime(UPDATED_UPDATED_TIME)
@@ -159,7 +154,6 @@ class ProductVariantResourceIT {
         assertThat(testProductVariant.getMrp()).isEqualTo(DEFAULT_MRP);
         assertThat(testProductVariant.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
         assertThat(testProductVariant.getTitle()).isEqualTo(DEFAULT_TITLE);
-        assertThat(testProductVariant.getAttributes()).isEqualTo(DEFAULT_ATTRIBUTES);
         assertThat(testProductVariant.getImages()).isEqualTo(DEFAULT_IMAGES);
         assertThat(testProductVariant.getCreatedTime()).isEqualTo(DEFAULT_CREATED_TIME);
         assertThat(testProductVariant.getUpdatedTime()).isEqualTo(DEFAULT_UPDATED_TIME);
@@ -224,7 +218,6 @@ class ProductVariantResourceIT {
             .andExpect(jsonPath("$.[*].mrp").value(hasItem(DEFAULT_MRP.doubleValue())))
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION)))
             .andExpect(jsonPath("$.[*].title").value(hasItem(DEFAULT_TITLE)))
-            .andExpect(jsonPath("$.[*].attributes").value(hasItem(DEFAULT_ATTRIBUTES)))
             .andExpect(jsonPath("$.[*].images").value(hasItem(DEFAULT_IMAGES)))
             .andExpect(jsonPath("$.[*].createdTime").value(hasItem(sameInstant(DEFAULT_CREATED_TIME))))
             .andExpect(jsonPath("$.[*].updatedTime").value(hasItem(sameInstant(DEFAULT_UPDATED_TIME))))
@@ -250,7 +243,6 @@ class ProductVariantResourceIT {
             .andExpect(jsonPath("$.mrp").value(DEFAULT_MRP.doubleValue()))
             .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION))
             .andExpect(jsonPath("$.title").value(DEFAULT_TITLE))
-            .andExpect(jsonPath("$.attributes").value(DEFAULT_ATTRIBUTES))
             .andExpect(jsonPath("$.images").value(DEFAULT_IMAGES))
             .andExpect(jsonPath("$.createdTime").value(sameInstant(DEFAULT_CREATED_TIME)))
             .andExpect(jsonPath("$.updatedTime").value(sameInstant(DEFAULT_UPDATED_TIME)))
@@ -284,7 +276,6 @@ class ProductVariantResourceIT {
             .mrp(UPDATED_MRP)
             .description(UPDATED_DESCRIPTION)
             .title(UPDATED_TITLE)
-            .attributes(UPDATED_ATTRIBUTES)
             .images(UPDATED_IMAGES)
             .createdTime(UPDATED_CREATED_TIME)
             .updatedTime(UPDATED_UPDATED_TIME)
@@ -309,7 +300,6 @@ class ProductVariantResourceIT {
         assertThat(testProductVariant.getMrp()).isEqualTo(UPDATED_MRP);
         assertThat(testProductVariant.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
         assertThat(testProductVariant.getTitle()).isEqualTo(UPDATED_TITLE);
-        assertThat(testProductVariant.getAttributes()).isEqualTo(UPDATED_ATTRIBUTES);
         assertThat(testProductVariant.getImages()).isEqualTo(UPDATED_IMAGES);
         assertThat(testProductVariant.getCreatedTime()).isEqualTo(UPDATED_CREATED_TIME);
         assertThat(testProductVariant.getUpdatedTime()).isEqualTo(UPDATED_UPDATED_TIME);
@@ -388,9 +378,8 @@ class ProductVariantResourceIT {
         partialUpdatedProductVariant
             .productPrice(UPDATED_PRODUCT_PRICE)
             .mrp(UPDATED_MRP)
-            .images(UPDATED_IMAGES)
-            .updatedTime(UPDATED_UPDATED_TIME)
-            .updatedBy(UPDATED_UPDATED_BY);
+            .createdTime(UPDATED_CREATED_TIME)
+            .createdBy(UPDATED_CREATED_BY);
 
         restProductVariantMockMvc
             .perform(
@@ -410,12 +399,11 @@ class ProductVariantResourceIT {
         assertThat(testProductVariant.getMrp()).isEqualTo(UPDATED_MRP);
         assertThat(testProductVariant.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
         assertThat(testProductVariant.getTitle()).isEqualTo(DEFAULT_TITLE);
-        assertThat(testProductVariant.getAttributes()).isEqualTo(DEFAULT_ATTRIBUTES);
-        assertThat(testProductVariant.getImages()).isEqualTo(UPDATED_IMAGES);
-        assertThat(testProductVariant.getCreatedTime()).isEqualTo(DEFAULT_CREATED_TIME);
-        assertThat(testProductVariant.getUpdatedTime()).isEqualTo(UPDATED_UPDATED_TIME);
-        assertThat(testProductVariant.getCreatedBy()).isEqualTo(DEFAULT_CREATED_BY);
-        assertThat(testProductVariant.getUpdatedBy()).isEqualTo(UPDATED_UPDATED_BY);
+        assertThat(testProductVariant.getImages()).isEqualTo(DEFAULT_IMAGES);
+        assertThat(testProductVariant.getCreatedTime()).isEqualTo(UPDATED_CREATED_TIME);
+        assertThat(testProductVariant.getUpdatedTime()).isEqualTo(DEFAULT_UPDATED_TIME);
+        assertThat(testProductVariant.getCreatedBy()).isEqualTo(UPDATED_CREATED_BY);
+        assertThat(testProductVariant.getUpdatedBy()).isEqualTo(DEFAULT_UPDATED_BY);
     }
 
     @Test
@@ -437,7 +425,6 @@ class ProductVariantResourceIT {
             .mrp(UPDATED_MRP)
             .description(UPDATED_DESCRIPTION)
             .title(UPDATED_TITLE)
-            .attributes(UPDATED_ATTRIBUTES)
             .images(UPDATED_IMAGES)
             .createdTime(UPDATED_CREATED_TIME)
             .updatedTime(UPDATED_UPDATED_TIME)
@@ -462,7 +449,6 @@ class ProductVariantResourceIT {
         assertThat(testProductVariant.getMrp()).isEqualTo(UPDATED_MRP);
         assertThat(testProductVariant.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
         assertThat(testProductVariant.getTitle()).isEqualTo(UPDATED_TITLE);
-        assertThat(testProductVariant.getAttributes()).isEqualTo(UPDATED_ATTRIBUTES);
         assertThat(testProductVariant.getImages()).isEqualTo(UPDATED_IMAGES);
         assertThat(testProductVariant.getCreatedTime()).isEqualTo(UPDATED_CREATED_TIME);
         assertThat(testProductVariant.getUpdatedTime()).isEqualTo(UPDATED_UPDATED_TIME);

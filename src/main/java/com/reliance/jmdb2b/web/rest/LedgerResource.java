@@ -121,14 +121,11 @@ public class LedgerResource {
         Optional<Ledger> result = ledgerRepository
             .findById(ledger.getId())
             .map(existingLedger -> {
-                if (ledger.getJioCredits() != null) {
-                    existingLedger.setJioCredits(ledger.getJioCredits());
+                if (ledger.getJioCreditsAvailable() != null) {
+                    existingLedger.setJioCreditsAvailable(ledger.getJioCreditsAvailable());
                 }
-                if (ledger.getTotalCredit() != null) {
-                    existingLedger.setTotalCredit(ledger.getTotalCredit());
-                }
-                if (ledger.getCreditBalance() != null) {
-                    existingLedger.setCreditBalance(ledger.getCreditBalance());
+                if (ledger.getJioCreditLimit() != null) {
+                    existingLedger.setJioCreditLimit(ledger.getJioCreditLimit());
                 }
 
                 return existingLedger;

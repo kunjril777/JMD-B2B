@@ -31,10 +31,6 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "attributes",
-      "fieldType": "String"
-    },
-    {
       "fieldName": "images",
       "fieldType": "String"
     },

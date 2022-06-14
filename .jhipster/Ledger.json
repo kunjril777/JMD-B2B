@@ -6,15 +6,11 @@
   "entityTableName": "ledger",
   "fields": [
     {
-      "fieldName": "jioCredits",
+      "fieldName": "jioCreditsAvailable",
       "fieldType": "Double"
     },
     {
-      "fieldName": "totalCredit",
-      "fieldType": "Double"
-    },
-    {
-      "fieldName": "creditBalance",
+      "fieldName": "jioCreditLimit",
       "fieldType": "Double"
     }
   ],

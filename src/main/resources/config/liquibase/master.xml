@@ -40,6 +40,10 @@
     <include file="config/liquibase/changelog/20220613081254_added_entity_RecommmendedItems.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20220613081255_added_entity_RecentSearches.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20220613081256_added_entity_PincodeDeliveryMapping.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220614091340_added_entity_Attribute.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220614091341_added_entity_AttributeName.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220614091342_added_entity_AttributeValue.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220614091343_added_entity_ProductAttribute.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20220613081232_added_entity_constraints_UserB2B.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20220613081233_added_entity_constraints_Address.xml" relativeToChangelogFile="false"/>
@@ -56,6 +60,7 @@
     <include file="config/liquibase/changelog/20220613081246_added_entity_constraints_Category.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20220613081247_added_entity_constraints_WishList.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20220613081248_added_entity_constraints_WishListProduct.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220614091342_added_entity_constraints_AttributeValue.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

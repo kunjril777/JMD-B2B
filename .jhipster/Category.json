@@ -14,10 +14,6 @@
       "fieldType": "Long"
     },
     {
-      "fieldName": "attributes",
-      "fieldType": "String"
-    },
-    {
       "fieldName": "level",
       "fieldType": "String"
     },

@@ -129,9 +129,6 @@ public class CategoryResource {
                 if (category.getParentcategory() != null) {
                     existingCategory.setParentcategory(category.getParentcategory());
                 }
-                if (category.getAttributes() != null) {
-                    existingCategory.setAttributes(category.getAttributes());
-                }
                 if (category.getLevel() != null) {
                     existingCategory.setLevel(category.getLevel());
                 }

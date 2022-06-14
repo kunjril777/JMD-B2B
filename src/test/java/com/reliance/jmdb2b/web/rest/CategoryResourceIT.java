@@ -35,9 +35,6 @@ class CategoryResourceIT {
     private static final Long DEFAULT_PARENTCATEGORY = 1L;
     private static final Long UPDATED_PARENTCATEGORY = 2L;
 
-    private static final String DEFAULT_ATTRIBUTES = "AAAAAAAAAA";
-    private static final String UPDATED_ATTRIBUTES = "BBBBBBBBBB";
-
     private static final String DEFAULT_LEVEL = "AAAAAAAAAA";
     private static final String UPDATED_LEVEL = "BBBBBBBBBB";
 
@@ -74,7 +71,6 @@ class CategoryResourceIT {
         Category category = new Category()
             .title(DEFAULT_TITLE)
             .parentcategory(DEFAULT_PARENTCATEGORY)
-            .attributes(DEFAULT_ATTRIBUTES)
             .level(DEFAULT_LEVEL)
             .description(DEFAULT_DESCRIPTION)
             .categoryStatus(DEFAULT_CATEGORY_STATUS);
@@ -91,7 +87,6 @@ class CategoryResourceIT {
         Category category = new Category()
             .title(UPDATED_TITLE)
             .parentcategory(UPDATED_PARENTCATEGORY)
-            .attributes(UPDATED_ATTRIBUTES)
             .level(UPDATED_LEVEL)
             .description(UPDATED_DESCRIPTION)
             .categoryStatus(UPDATED_CATEGORY_STATUS);
@@ -118,7 +113,6 @@ class CategoryResourceIT {
         Category testCategory = categoryList.get(categoryList.size() - 1);
         assertThat(testCategory.getTitle()).isEqualTo(DEFAULT_TITLE);
         assertThat(testCategory.getParentcategory()).isEqualTo(DEFAULT_PARENTCATEGORY);
-        assertThat(testCategory.getAttributes()).isEqualTo(DEFAULT_ATTRIBUTES);
         assertThat(testCategory.getLevel()).isEqualTo(DEFAULT_LEVEL);
         assertThat(testCategory.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
         assertThat(testCategory.getCategoryStatus()).isEqualTo(DEFAULT_CATEGORY_STATUS);
@@ -156,7 +150,6 @@ class CategoryResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(category.getId().intValue())))
             .andExpect(jsonPath("$.[*].title").value(hasItem(DEFAULT_TITLE)))
             .andExpect(jsonPath("$.[*].parentcategory").value(hasItem(DEFAULT_PARENTCATEGORY.intValue())))
-            .andExpect(jsonPath("$.[*].attributes").value(hasItem(DEFAULT_ATTRIBUTES)))
             .andExpect(jsonPath("$.[*].level").value(hasItem(DEFAULT_LEVEL)))
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION)))
             .andExpect(jsonPath("$.[*].categoryStatus").value(hasItem(DEFAULT_CATEGORY_STATUS.booleanValue())));
@@ -176,7 +169,6 @@ class CategoryResourceIT {
             .andExpect(jsonPath("$.id").value(category.getId().intValue()))
             .andExpect(jsonPath("$.title").value(DEFAULT_TITLE))
             .andExpect(jsonPath("$.parentcategory").value(DEFAULT_PARENTCATEGORY.intValue()))
-            .andExpect(jsonPath("$.attributes").value(DEFAULT_ATTRIBUTES))
             .andExpect(jsonPath("$.level").value(DEFAULT_LEVEL))
             .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION))
             .andExpect(jsonPath("$.categoryStatus").value(DEFAULT_CATEGORY_STATUS.booleanValue()));
@@ -204,7 +196,6 @@ class CategoryResourceIT {
         updatedCategory
             .title(UPDATED_TITLE)
             .parentcategory(UPDATED_PARENTCATEGORY)
-            .attributes(UPDATED_ATTRIBUTES)
             .level(UPDATED_LEVEL)
             .description(UPDATED_DESCRIPTION)
             .categoryStatus(UPDATED_CATEGORY_STATUS);
@@ -223,7 +214,6 @@ class CategoryResourceIT {
         Category testCategory = categoryList.get(categoryList.size() - 1);
         assertThat(testCategory.getTitle()).isEqualTo(UPDATED_TITLE);
         assertThat(testCategory.getParentcategory()).isEqualTo(UPDATED_PARENTCATEGORY);
-        assertThat(testCategory.getAttributes()).isEqualTo(UPDATED_ATTRIBUTES);
         assertThat(testCategory.getLevel()).isEqualTo(UPDATED_LEVEL);
         assertThat(testCategory.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
         assertThat(testCategory.getCategoryStatus()).isEqualTo(UPDATED_CATEGORY_STATUS);
@@ -297,11 +287,7 @@ class CategoryResourceIT {
         Category partialUpdatedCategory = new Category();
         partialUpdatedCategory.setId(category.getId());
 
-        partialUpdatedCategory
-            .title(UPDATED_TITLE)
-            .level(UPDATED_LEVEL)
-            .description(UPDATED_DESCRIPTION)
-            .categoryStatus(UPDATED_CATEGORY_STATUS);
+        partialUpdatedCategory.title(UPDATED_TITLE).description(UPDATED_DESCRIPTION).categoryStatus(UPDATED_CATEGORY_STATUS);
 
         restCategoryMockMvc
             .perform(
@@ -317,8 +303,7 @@ class CategoryResourceIT {
         Category testCategory = categoryList.get(categoryList.size() - 1);
         assertThat(testCategory.getTitle()).isEqualTo(UPDATED_TITLE);
         assertThat(testCategory.getParentcategory()).isEqualTo(DEFAULT_PARENTCATEGORY);
-        assertThat(testCategory.getAttributes()).isEqualTo(DEFAULT_ATTRIBUTES);
-        assertThat(testCategory.getLevel()).isEqualTo(UPDATED_LEVEL);
+        assertThat(testCategory.getLevel()).isEqualTo(DEFAULT_LEVEL);
         assertThat(testCategory.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
         assertThat(testCategory.getCategoryStatus()).isEqualTo(UPDATED_CATEGORY_STATUS);
     }
@@ -338,7 +323,6 @@ class CategoryResourceIT {
         partialUpdatedCategory
             .title(UPDATED_TITLE)
             .parentcategory(UPDATED_PARENTCATEGORY)
-            .attributes(UPDATED_ATTRIBUTES)
             .level(UPDATED_LEVEL)
             .description(UPDATED_DESCRIPTION)
             .categoryStatus(UPDATED_CATEGORY_STATUS);
@@ -357,7 +341,6 @@ class CategoryResourceIT {
         Category testCategory = categoryList.get(categoryList.size() - 1);
         assertThat(testCategory.getTitle()).isEqualTo(UPDATED_TITLE);
         assertThat(testCategory.getParentcategory()).isEqualTo(UPDATED_PARENTCATEGORY);
-        assertThat(testCategory.getAttributes()).isEqualTo(UPDATED_ATTRIBUTES);
         assertThat(testCategory.getLevel()).isEqualTo(UPDATED_LEVEL);
         assertThat(testCategory.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
         assertThat(testCategory.getCategoryStatus()).isEqualTo(UPDATED_CATEGORY_STATUS);

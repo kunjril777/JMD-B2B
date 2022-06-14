@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20220614091340",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "attribute",
+  "fields": [
+    {
+      "fieldName": "propetyTypeId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "propertyType",
+      "fieldType": "PROPERTYTYPE",
+      "fieldValues": "PRODUCTVARIANT,CATERGORY"
+    },
+    {
+      "fieldName": "propertyName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "propertyValue",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Attribute",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}
